@@ -1,7 +1,20 @@
 import socket
 import sys
 def rangeScanner(targetIP,portStart,portEnd):
-    """ SCAN FOR A RANGE OF PORT"""
+    """ SCAN FOR A RANGE OF PORT
+    #############################################################################
+To Check for a Single port
+SYNTAX:
+
+  python portScanner.py <ip_address> <port_number>
+  
+EXAMPLE:
+  
+  python portScanner.py 8.8.8.8 53  
+
+- Above command will let you know whether port no 53 is open or not.
+#############################################################################
+    """
     portEnd+=1
     try:
         for port in range(portStart, portEnd):
