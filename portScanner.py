@@ -2,6 +2,7 @@ import socket
 import sys
 def rangeScanner(targetIP,portStart,portEnd):
     """ SCAN FOR A RANGE OF PORT"""
+    portEnd+=1
     try:
         for port in range(portStart, portEnd):
             mySoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
