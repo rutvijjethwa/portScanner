@@ -2,18 +2,15 @@ import socket
 import sys
 def rangeScanner(targetIP,portStart,portEnd):
     """ SCAN FOR A RANGE OF PORT
-    #############################################################################
-To Check for a Single port
-SYNTAX:
+###################################################################################
+   To check for a range of port SYNTAX:
 
-  python portScanner.py <ip_address> <port_number>
-  
-EXAMPLE:
-  
-  python portScanner.py 8.8.8.8 53  
+python portScanner.py
 
-- Above command will let you know whether port no 53 is open or not.
-#############################################################################
+python portScanner.py 8.8.8.8 53 60
+
+Above command will check which ports are open or closed from port number 53 to 60.
+####################################################################################    
     """
     portEnd+=1
     try:
@@ -29,7 +26,20 @@ EXAMPLE:
          print("Connectivity Issue or the target isn't available")
 ###########################################################################
 def singlePortScanner(targetIP,port):
-    """ SCAN FOR A SINGLE PORT  ONLY"""
+    """ SCAN FOR A SINGLE PORT  ONLY
+     #############################################################################
+To Check for a Single port
+SYNTAX:
+
+  python portScanner.py <ip_address> <port_number>
+  
+EXAMPLE:
+  
+  python portScanner.py 8.8.8.8 53  
+
+- Above command will let you know whether port no 53 is open or not.
+#############################################################################
+    """
     try:
             mySoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             targetPcScanResult = mySoc.connect_ex((targetIP,port))
