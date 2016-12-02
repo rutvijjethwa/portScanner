@@ -9,8 +9,8 @@ You can either check for a specific port or for a range of ports, syntax for whi
 
 To Check for a Single port
 
-python portScanner.py 8.8.8.8 53
+  python portScanner.py 8.8.8.8 53
 
 To check for a range of port
 
-python portScanner.py 8.8.8.8 53 60
+  python portScanner.py 8.8.8.8 53 60
