@@ -15,7 +15,7 @@ def rangeScanner(targetIP,portStart,portEnd):
          print("Connectivity Issue or the target isn't available")
 ###########################################################################
 def singlePortScanner(targetIP,port):
-    """ SCAN FOR A SINGLE PORT"""
+    """ SCAN FOR A SINGLE PORT  ONLY"""
     try:
             mySoc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             targetPcScanResult = mySoc.connect_ex((targetIP,port))
