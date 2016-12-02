@@ -10,7 +10,9 @@ def rangeScanner(targetIP,portStart,portEnd):
                 print("Port {0}: Open".format(port))
             mySoc.close()
     except socket.error:
-        print("Please Validate the input")
+         print("Please Validate the input")
+    finally:
+         print("Connectivity Issue or the target isn't available")
 ###########################################################################
 def singlePortScanner(targetIP,port):
     """ SCAN FOR A SINGLE PORT"""
@@ -24,13 +26,18 @@ def singlePortScanner(targetIP,port):
             mySoc.close()
     except socket.error:
         print("Please Validate the input")
+    finally:
+        print("Connectivity Issue or the target isn't available")
 ############################################################################
 
 if __name__=='__main__':
     targetPc = sys.argv[1]
-    targetPcName = socket.gethostbyaddr(targetPc)[0]
-    print("Target Hostname : {}".format(targetPcName))
-    if len(sys.argv) == 3:
-        singlePortScanner(targetPc,int(sys.argv[2]))
-    elif len(sys.argv) == 4:
-        rangeScanner(targetPc,int(sys.argv[2]),int(sys.argv[3]))
+    try:
+        targetPcName = socket.gethostbyaddr(targetPc)[0]
+        print("Target Hostname : {}".format(targetPcName))
+        if len(sys.argv) == 3:
+            singlePortScanner(targetPc,int(sys.argv[2]))
+        elif len(sys.argv) == 4:
+            rangeScanner(targetPc,int(sys.argv[2]),int(sys.argv[3]))
+    except socket.herror:
+        print("Connectivity Issue or the target isn't available")
