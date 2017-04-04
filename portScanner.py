@@ -22,8 +22,8 @@ Above command will check which ports are open or closed from port number 53 to 6
             mySoc.close()
     except socket.error:
          print("Please Validate the input")
-    finally:
-         print("Connectivity Issue or the target isn't available")
+    #finally:
+        # print("Connectivity Issue or the target isn't available")
 ###########################################################################
 def singlePortScanner(targetIP,port):
     """ SCAN FOR A SINGLE PORT  ONLY
@@ -50,8 +50,8 @@ EXAMPLE:
             mySoc.close()
     except socket.error:
         print("Please Validate the input")
-    finally:
-        print("Connectivity Issue or the target isn't available")
+   # finally:
+    #    print("Connectivity Issue or the target isn't available")
 ############################################################################
 
 if __name__=='__main__':
